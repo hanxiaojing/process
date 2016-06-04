@@ -1,0 +1,26 @@
+#define _CRT_SECURE_NO_WARNINGS 1
+#include<stdio.h>
+#include<stdlib.h>
+#include<string.h>
+
+
+
+int main()
+{
+	char arr[101];
+	memset(arr, '\0', sizeof(arr) / sizeof(arr[0]));
+	int i = 0;
+	char move[5] = "-\\|/";
+	while (i <= 100)
+	{
+		arr[i] = '=';
+		printf("[%-100s] %d%% %c", arr, i + 1, move[i % 4]);
+		Sleep(100);
+		i++;
+		printf("\r");
+		fflush(stdout);
+	}
+	printf("\n");
+	system("pause");
+	return 0;
+}
